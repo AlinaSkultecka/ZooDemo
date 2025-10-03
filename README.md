@@ -7,8 +7,6 @@ A simple C# console application that demonstrates **object-oriented programming 
 
 ## 🎯 Learning Objectives
 
-- This project is a great way to practice:
-
 - Abstract classes and methods
 
 - Virtual methods and overriding
