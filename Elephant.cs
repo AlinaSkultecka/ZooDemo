@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace ZooDemo
 {
-    public class Elephant : Animal, ITrick
+    public class Elephant : Animal, ITrick, ICanRun
     {
-        public Elephant(string name, int age, int stratHp) : base(name, age, stratHp)
+        public Elephant(string name, int age, int startHp, int maxHp) : base(name, age, startHp, maxHp)
         {
+            Diet = DietType.Herbivore;
         }
 
         public string DoTrick()
@@ -26,5 +27,11 @@ namespace ZooDemo
         {
             return 25.0;
         }
+
+        public double RunSpeedKmh()
+        {
+            return 20.5;
+        }
+
     }
 }

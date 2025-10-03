@@ -6,6 +6,12 @@ using System.Threading.Tasks;
 
 namespace ZooDemo
 {
+    public enum DietType
+    {
+        Herbivore,
+        Carnivore,
+        Omnivore
+    }
     public abstract class Animal
     {
         public static int TotalCount = 0;
@@ -21,18 +27,26 @@ namespace ZooDemo
                 {
                     hp = 0;
                 }
+                else if (value > MaxHP)
+                {
+                    hp = MaxHP;
+                }
                 else
                 {
                     hp = value;
                 }
             }   
         }
+        public int MaxHP { get; private set; }
+        public DietType Diet { get; protected set; } // protected set - can be set in derived classes
 
-        protected Animal(string name, int age, int stratHp)
+
+        protected Animal(string name, int age, int startHp, int maxHp)
         {
             Name = name;
             Age = age;
-            HP = stratHp;
+            HP = startHp;
+            MaxHP = maxHp;
             TotalCount++;
         }
 
@@ -44,12 +58,20 @@ namespace ZooDemo
 
         public string Info()
         {
-            return $"{Name} + Age: {Age} HP: {HP}";
+            return $"{Name} + Age: {Age} HP: {HP} MaxHP: {MaxHP} Diet: {Diet}";
         }
 
         public override string ToString()
         {
-            return $"{Info()} potatis";
+            return $"{Info()}, by using ToString";
         }
+
+        public int Birthday()
+        {
+            Age++;
+            return Age;
+        }
+
+        
     }
 }

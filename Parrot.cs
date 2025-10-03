@@ -6,14 +6,15 @@ using System.Threading.Tasks;
 
 namespace ZooDemo
 {
-    public class Parrot : Animal, ITrick
+    public class Parrot : Animal, ITrick, IFly
     {
         // 1. inheritanse from Aminal +
         // 2. impliment constructor +
         // 3. impliment abstract methods +
         // 4. override the virtual
-        public Parrot(string name, int age, int stratHp) : base(name, age, stratHp)
+        public Parrot(string name, int age, int startHp, int maxHp) : base(name, age, startHp, maxHp)
         {
+            Diet = DietType.Herbivore;
         }
 
         public override string Speak()
@@ -28,7 +29,12 @@ namespace ZooDemo
 
         public string DoTrick()
         {
-            return "Visslar en melodi";
+            return "Twitter a song";
+        }
+
+        public double FlySpeedKmh()
+        {
+            return 20.5;
         }
     }
 }

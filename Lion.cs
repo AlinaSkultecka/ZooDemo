@@ -8,8 +8,9 @@ namespace ZooDemo
 {
     public class Lion : Animal, ICanRun
     {
-        public Lion(string name, int age, int stratHp) : base(name, age, stratHp)
+        public Lion(string name, int age, int startHp, int maxHp) : base(name, age, startHp, maxHp)
         {
+            Diet = DietType.Carnivore;
         }
 
         public override string Speak()   //string must return string

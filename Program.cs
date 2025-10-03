@@ -6,25 +6,60 @@
         {
           Zoo zoo = new Zoo();
 
-            Animal Simba = new Lion("Simba", 10, 100);
-            Animal Zazoo = new Parrot("Zazoo", 1, 40);
-            Animal Maria = new Elephant ("Maria", 12, 100);
-
+            // Added new animals
+            Animal Simba = new Lion("Simba", 10, 100, 500);
+            Animal Zazoo = new Parrot("Zazoo", 1, 40, 100);
+            Animal Maria = new Elephant ("Maria", 12, 100, 450);
 
             zoo.Add(Simba);
             zoo.Add(Zazoo);
             zoo.Add(Maria);
 
+            Console.WriteLine("Hello, Zoo!");
             Console.WriteLine("Total amount of animals is " + Animal.TotalCount);
 
+            Console.WriteLine("");
             zoo.ListAll();
+            
+            Console.WriteLine("");
             zoo.ShowFeedingPlan();
-            zoo.AllSpeak();
-
-            zoo.ShowTrick();
             zoo.TotalFoodKG();
 
+            Console.WriteLine("");
+            zoo.AllSpeak();
+
+            Console.WriteLine("");
+            zoo.ShowTrick();
+
+            Console.WriteLine("");
             zoo.ShowSpeed();
+            zoo.ShowRunnersSorted();
+
+
+            Console.WriteLine("\n=== Fight ===");
+            Console.WriteLine("Simba got into a fight");
+            zoo.DemageAnimal("Simba", 50);
+            zoo.Heal("Simba");
+
+            Console.WriteLine("\n=== Birhtday ===");
+            int newAge = Simba.Birthday();  // newAge now holds 11
+            Console.WriteLine($"{Simba.Age}");
+            Console.WriteLine(newAge);      // prints 11
+
+            Console.WriteLine("\n=== ToString ===");
+            Console.WriteLine(Simba.ToString());
+;
+            Console.WriteLine("\n=== Finding an animal ===");
+            zoo.PrintFoundByNameInfo("Maria");
+            zoo.PrintFoundByNameInfo("Bob");
+
+            Console.WriteLine("\n=== List of animal's diet ===");
+            zoo.ListByDiet(DietType.Carnivore);
+            zoo.ListByDiet(DietType.Herbivore);
+
+            Console.WriteLine("");
+            zoo.ShowFlights();
+
         }
     }
 }
