@@ -51,9 +51,11 @@ namespace ZooDemo
         }
 
         public abstract string Speak(); // abstract - must overrides
+        
+        protected double DietMultiplier;
         public virtual double DailyFoodKg()  //virtual - can overrides
         {
-            return 1.0;
+            return 1.0 * DietMultiplier;
         }
 
         public string Info()
@@ -72,6 +74,11 @@ namespace ZooDemo
             return Age;
         }
 
-        
+        public string GetReportLine()
+        {
+            return $"{Name};{Age};{HP};{DailyFoodKg()}";
+        }
+
+
     }
 }

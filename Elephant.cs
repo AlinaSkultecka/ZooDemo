@@ -8,9 +8,12 @@ namespace ZooDemo
 {
     public class Elephant : Animal, ITrick, ICanRun
     {
+        public static int Count = 0;
         public Elephant(string name, int age, int startHp, int maxHp) : base(name, age, startHp, maxHp)
         {
             Diet = DietType.Herbivore;
+            DietMultiplier = 20.0;
+            Count++;
         }
 
         public string DoTrick()
@@ -23,9 +26,10 @@ namespace ZooDemo
             return "Tuuuu Tuuuu";
         }
 
-        public override double DailyFoodKg()
+        // Elephant eats even more than the base rule suggests:
+        public override double DailyFoodKg()  
         {
-            return 25.0;
+            return base.DailyFoodKg() * 2.0; // double the base amount
         }
 
         public double RunSpeedKmh()

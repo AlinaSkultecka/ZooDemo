@@ -219,6 +219,22 @@ namespace ZooDemo
             }
         }
 
+        public void ShowSpeciesCount()
+        {
+            Console.WriteLine($" === Species Count === ");
+            Console.WriteLine($"Lions: {Lion.Count}");
+            Console.WriteLine($"Parrots: {Parrot.Count}");
+            Console.WriteLine($"Elephants: {Elephant.Count}");
+        }
+
+        public void ShowReport()
+        {
+            Console.WriteLine("=== Zoo Report ===");
+            foreach (Animal a in animals)
+            {
+                Console.WriteLine(a.GetReportLine());
+            }
+        }
 
     }
 }

@@ -12,9 +12,12 @@ namespace ZooDemo
         // 2. impliment constructor +
         // 3. impliment abstract methods +
         // 4. override the virtual
+        public static int Count = 0;
         public Parrot(string name, int age, int startHp, int maxHp) : base(name, age, startHp, maxHp)
         {
             Diet = DietType.Herbivore;
+            DietMultiplier = 0.2;
+            Count++;
         }
 
         public override string Speak()

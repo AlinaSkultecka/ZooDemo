@@ -17,12 +17,17 @@
 
             Console.WriteLine("Hello, Zoo!");
             Console.WriteLine("Total amount of animals is " + Animal.TotalCount);
+;
+            Console.WriteLine("");
+            zoo.ShowSpeciesCount();
 
             Console.WriteLine("");
             zoo.ListAll();
             
             Console.WriteLine("");
             zoo.ShowFeedingPlan();
+
+            Console.WriteLine("");
             zoo.TotalFoodKG();
 
             Console.WriteLine("");
@@ -42,9 +47,9 @@
             zoo.Heal("Simba");
 
             Console.WriteLine("\n=== Birhtday ===");
+            Console.WriteLine($"Simba's age is {Simba.Age}");
             int newAge = Simba.Birthday();  // newAge now holds 11
-            Console.WriteLine($"{Simba.Age}");
-            Console.WriteLine(newAge);      // prints 11
+            Console.WriteLine($"Simba's new age is {newAge} after his bithday");      // prints 11
 
             Console.WriteLine("\n=== ToString ===");
             Console.WriteLine(Simba.ToString());
@@ -60,6 +65,10 @@
             Console.WriteLine("");
             zoo.ShowFlights();
 
+            Console.WriteLine("");
+            Console.WriteLine(Simba.GetReportLine());
+
+            zoo.ShowReport();
         }
     }
 }
